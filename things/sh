@@ -1,0 +1,51 @@
+= ..eenndd
+
+(from gem activesupport-4.2.0)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  AAccttiivveeSSuuppppoorrtt::::NNoottiiffiiccaattiioonnss::::EEvveenntt
+------------------------------------------------------------------------------
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  MMaattcchhDDaattaa
+------------------------------------------------------------------------------
+  mtch.end(n)   -> integer
+
+------------------------------------------------------------------------------
+
+Returns the offset of the character immediately following the end of the _nth
+element of the match array in the string. _n can be a string or symbol to
+reference a named capture.
+
+  m = /(.)(.)(\d+)(\d)/.match("THX1138.")
+  m.end(0)         #=> 7
+  m.end(2)         #=> 3
+
+  m = /(?<foo>.)(.)(?<bar>.)/.match("hoge")
+  p m.end(:foo)    #=> 1
+  p m.end(:bar)    #=> 3
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  RRaannggee
+------------------------------------------------------------------------------
+  rng.end    -> obj
+
+------------------------------------------------------------------------------
+
+Returns the object that defines the end of the range.
+
+  (1..10).end    #=> 10
+  (1...10).end   #=> 10
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  ZZSSttrreeaamm
+------------------------------------------------------------------------------
+  end()
+
+------------------------------------------------------------------------------
+
+Closes the stream. All operations on the closed stream will raise an
+exception.
+
+

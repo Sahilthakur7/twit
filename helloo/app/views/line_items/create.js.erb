@@ -1,0 +1,5 @@
+$('#notice').hide();
+if ($('#cart tr').length == 1) { $('#cart').show('blind',1000) }
+$('#cart').html("<%= escape_javascript render(@cart)%>");
+
+$('#bunty').css({'color': '#88ff88'}).animate({'color':'#114411'}, 1000);
