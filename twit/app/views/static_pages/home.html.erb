@@ -2,7 +2,11 @@
     <h1> Welcome to the Twit </h1>
 
     <h2>
-        <%= link_to "Sign Up now!", new_user_registration_path , class: "btn btn-lg btn-primary"%>
+    <% unless user_signed_in? %>
+        <%= link_to "Sign Up ",new_user_registration_path , class: "btn btn-lg btn-primary"%>
+<% else%>
+    <h2> You are online as <%= current_user.email %> </h2>
+        <%end%>
     </h2>
 </div>
 

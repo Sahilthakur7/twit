@@ -7,7 +7,11 @@
 
                     <li><%= link_to "Help", help_path %></li>
                     <li><%= link_to "Settings", settings_path %></li>
-                    <li><%= link_to "LogIn", "#"%></li>
+                <% unless user_signed_in? %>
+                    <li><%= link_to "LogIn", new_user_session_path %></li>
+                <%else%>
+                    <li><%= link_to "LogOut", destroy_user_session_path, method: :delete %>
+                <%end%>
                 </ul>
             </nav>
         </div>
