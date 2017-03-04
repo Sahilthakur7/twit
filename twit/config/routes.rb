@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { registration: 'registration' }
+  devise_for :users, :controllers => { registrations: 'registration' }
 get 'help' => 'static_pages#help'
 get 'contact' => 'static_pages#contact'
 get 'about' => 'static_pages#about'
