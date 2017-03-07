@@ -8,5 +8,19 @@
     <h2> You are online as <%= current_user.email %> </h2>
         <%end%>
     </h2>
+
+    <% if user_signed_in? %>
+        <div class="row">
+            <aside class="col-md-4">
+                <section class="user_info">
+                    <%= render 'shared/user_info'%>
+                </section>
+                <section class="micropost_form">
+                    <%= render 'shared/micropost_form' %>
+                </section>
+            </aside>
+        </div>
+    <%end%>
+
 </div>
 

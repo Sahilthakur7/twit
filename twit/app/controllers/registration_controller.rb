@@ -1,5 +1,10 @@
 class RegistrationController < Devise::RegistrationsController
 
+    def avatar
+        @user = current_user
+    end
+
+
     private
 
     def sign_up_params
