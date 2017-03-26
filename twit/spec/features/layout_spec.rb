@@ -4,7 +4,6 @@ RSpec.feature "When opened the home page" do
     scenario "home page opened" do
         visit "/"
 
-        expect(page).to have_content "Home"
         expect(page).to have_content "About"
         expect(page).to have_content "Settings"
             
