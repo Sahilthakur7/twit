@@ -1,11 +1,12 @@
 <li id= "micropost-<%= micropost.id %>">
-    <%= link_to image_tag(current_user.avatar.url(:thumb)), micropost.user%>
-    <span class="content"><%= micropost.content %></span>
+    <%= link_to image_tag(micropost.user.avatar.url(:thumb)), micropost.user%>
+    
+    <span class="content"><b><%= micropost.user.username %>:</b> <%= micropost.content %></span>
     <span class="timestamp">
-        Posted <%= time_ago_in_words(micropost.created_at)%>ago.
-    </span>
-    <% if current_user == micropost.user%> 
+        Posted: <%= time_ago_in_words(micropost.created_at)%> ago.    <% if current_user == micropost.user%> 
         <%= link_to "delete", micropost, method: :delete, data: { confirm: "You Sure?" }%>
     <%end%>
-</li>
+
+    </span>
+   </li>
 

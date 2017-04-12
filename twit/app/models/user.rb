@@ -28,4 +28,10 @@ validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
  def following?(other_user)
      following.include?(other_user)
  end
+
+ def feed
+     following_ids = "SELECT followed_id FROM relationships WHERE follower_id= :user_id"
+     Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id ", user_id: id)
+ end
+
 end
