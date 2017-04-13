@@ -1,0 +1,6 @@
+        <% if current_user.joined?(@group)%>
+            <%= render 'leave'%>
+        <% else%>
+            <%= render 'join'%>
+        <%end%>
+ 
