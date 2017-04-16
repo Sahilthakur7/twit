@@ -15,8 +15,9 @@ validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
  has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
  has_many :followers, through: :passive_relationships, source: :follower
 
- has_and_belongs_to_many :groups
 
+ has_many :group_relationships, foreign_key: "member_id", dependent: :destroy
+ has_many :joinedgroups, through: :group_relationships, source: :group
 
 
  def follow(other_user)
@@ -31,8 +32,16 @@ validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
      following.include?(other_user)
  end
 
+ def join(group)
+     group_relationships.create(group_id: group.id)
+ end
+
+ def unjoin(group)
+     group_relationships.find_by(group_id: group.id).destroy
+ end
+
  def joined?(group)
-     self.groups.include?(group)
+     joinedgroups.include?(group)
  end
 
  def feed

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412121323) do
+ActiveRecord::Schema.define(version: 20170414045845) do
+
+  create_table "group_relationships", force: :cascade do |t|
+    t.integer  "member_id"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "group_relationships", ["group_id"], name: "index_group_relationships_on_group_id"
+  add_index "group_relationships", ["member_id", "group_id"], name: "index_group_relationships_on_member_id_and_group_id", unique: true
+  add_index "group_relationships", ["member_id"], name: "index_group_relationships_on_member_id"
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"

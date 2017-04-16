@@ -12,11 +12,14 @@ get 'settings' => 'static_pages#settings'
   resources :users do
       member do
           get :following, :followers
+          get :joinedgroups
       end
+      
   end
   resources :microposts
   resources :relationships, only:[:create,:destroy]
   resources :groups
+  resources :group_relationships, only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

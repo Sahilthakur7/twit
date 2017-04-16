@@ -1,6 +1,8 @@
+<div id="join_form">
         <% if current_user.joined?(@group)%>
-            <%= render 'leave'%>
+            <%= render 'unjoin'%>
         <% else%>
             <%= render 'join'%>
         <%end%>
- 
+</div>
+
