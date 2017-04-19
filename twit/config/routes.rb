@@ -20,6 +20,7 @@ get 'settings' => 'static_pages#settings'
   resources :relationships, only:[:create,:destroy]
   resources :groups
   resources :group_relationships, only: [:create, :destroy]
+  resources :group_posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

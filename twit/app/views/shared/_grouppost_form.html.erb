@@ -1,0 +1,9 @@
+<%= simple_form_for(@grouppost) do |f|%>
+    <div class="field">
+        <%= f.input :content, label: "GroupPost", placeholder: "Compose new grouppost..."%>
+        <div><%= hidden_field_tag :group_id, @group.id %>
+
+
+        <%= f.button :submit,"Post", class: "btn-primary"%> 
+    </div>
+<%end%>

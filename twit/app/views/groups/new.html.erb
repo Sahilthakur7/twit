@@ -2,6 +2,7 @@
 <%= simple_form_for(@group) do |f|%>
     <div class="field">
         <%= f.input :name %>
+        <%= f.input :description%>
         <%= f.button :submit,"Post", class: "btn-primary"%> 
     </div>
 <%end%>

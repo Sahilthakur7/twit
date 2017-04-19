@@ -1,3 +1,11 @@
 <h1><%= @group.name %></h1>
 
 <%= render 'join_form' if signed_in? %>
+
+<h3><%= @group.description %></h3>
+</br>
+
+<%= render 'shared/grouppost_form'%>
+<% if @group.group_posts.any? && current_user.joinedgroups.include?(@group) %>
+    <%= render @groupposts%>
+<%end%>

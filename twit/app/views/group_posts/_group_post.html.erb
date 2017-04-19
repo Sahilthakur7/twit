@@ -1,0 +1,14 @@
+<h3>GroupPosts:</h3>
+<li id= "grouppost-<%= group_post.id %>">
+    <%= link_to image_tag(group_post.user.avatar.url(:thumb)), group_post.user%>
+    
+    <span class="content"><b><%= group_post.user.username %>:</b> <%= group_post.content %></span>
+    </br>
+    <span class="timestamp">
+        Posted: <%= time_ago_in_words(group_post.created_at)%> ago.    <% if current_user == group_post.user%> 
+        <%= link_to "delete", group_post, method: :delete, data: { confirm: "You Sure?" }%>
+    <%end%>
+
+    </span>
+   </li>
+

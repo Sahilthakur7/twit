@@ -21,12 +21,14 @@ class GroupsController < ApplicationController
     def show
         @group = Group.find(params[:id])
         @user = current_user
+        @grouppost = current_user.group_posts.build if signed_in?
+        @groupposts = @group.group_posts
     end
 
     private
     
     def group_params
-        params.require(:group).permit(:name)
+        params.require(:group).permit(:name,:description)
     end
 
 end

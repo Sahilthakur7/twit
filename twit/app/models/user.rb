@@ -19,6 +19,7 @@ validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
  has_many :group_relationships, foreign_key: "member_id", dependent: :destroy
  has_many :joinedgroups, through: :group_relationships, source: :group
 
+ has_many :group_posts,dependent: :destroy
 
  def follow(other_user)
      active_relationships.create(followed_id: other_user.id)
