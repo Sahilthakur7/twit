@@ -7,6 +7,8 @@ class GroupsController < ApplicationController
 
     def create
         @group = Group.create(group_params)
+        @group.admin_id = current_user.id
+        current_user.join(@group)
         if @group.save
             
             flash[:success]= "Group has been created."
@@ -28,7 +30,7 @@ class GroupsController < ApplicationController
     private
     
     def group_params
-        params.require(:group).permit(:name,:description)
+        params.require(:group).permit(:name,:description,:admin_id)
     end
 
 end

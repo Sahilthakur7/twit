@@ -1,5 +1,7 @@
 <h1><%= @group.name %></h1>
-
+<% if current_user == @group.admin %>
+    <i>You are the admin of this group.</i>
+<%end%>
 <%= render 'join_form' if signed_in? %>
 
 <h3><%= @group.description %></h3>

@@ -3,6 +3,7 @@
     <%= link_to image_tag(group_post.user.avatar.url(:thumb)), group_post.user%>
     
     <span class="content"><b><%= group_post.user.username %>:</b> <%= group_post.content %></span>
+    <%= image_tag group_post.picture.url if group_post.picture?%>
     </br>
     <span class="timestamp">
         Posted: <%= time_ago_in_words(group_post.created_at)%> ago.    <% if current_user == group_post.user%> 

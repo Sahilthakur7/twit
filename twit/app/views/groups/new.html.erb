@@ -3,6 +3,7 @@
     <div class="field">
         <%= f.input :name %>
         <%= f.input :description%>
+        <%= hidden_field_tag :admin_id, current_user.id%>
         <%= f.button :submit,"Post", class: "btn-primary"%> 
     </div>
 <%end%>

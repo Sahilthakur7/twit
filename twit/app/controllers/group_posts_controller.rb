@@ -13,7 +13,7 @@ class GroupPostsController < ApplicationController
 
     private
     def group_post_params
-        params.require(:group_post).permit(:content)
+        params.require(:group_post).permit(:content,:picture)
 
     end
 end
