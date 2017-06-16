@@ -1,0 +1,22 @@
+{
+  "name": "flapper-news",
+  "homepage": "https://github.com/Sahilthakur7/twit",
+  "authors": [
+    "SahilThakur7 <sahilrd07@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.4",
+    "bootstrap": "^3.3.7"
+  }
+}
