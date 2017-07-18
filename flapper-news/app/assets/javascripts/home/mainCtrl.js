@@ -1,3 +1,4 @@
+angular.module('flapperNews')
 .controller('MainCtrl', [
 '$scope', 'posts',
 function($scope,posts){
@@ -6,10 +7,10 @@ function($scope,posts){
     
  $scope.addPost = function() {
     if(!$scope.title || $scope.title === '') { return; }
-    $scope.posts.push({title: $scope.title, upvotes: 0 , link: $scope.link, comments: [
-    {author: 'Sahil', body: 'Cool post', upvotes: 3},
-    {author: 'KV', body: 'Hola', upvotes: 1}
-    ]});
+    posts.create({
+        title: $scope.title,
+        link: $scope.link
+    });
     $scope.title = '';
     $scope.link = '';
 };   
